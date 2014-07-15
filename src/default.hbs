@@ -33,12 +33,14 @@
 
     <!-- build:css({src,.tmp}) /assets/css/main.min.css -->
     <link href="/assets/_components/font-awesome/css/font-awesome.css">
-    <link href="/assets/_components/prism/themes/prism-tomorrow.css">
+    <link href="/assets/_components/prism/themes/prism-solarized.css">
     <link href="/assets/_components/prism/plugins/autolinker/prism-autolinker.css">
     <link href="/assets/_components/pace/themes/pace-theme-minimal.css">
     <link href="/assets/css/style.css">
     <!-- endbuild -->
 
+    <script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">
       {{> custom/config}}
 
@@ -65,7 +67,10 @@
     <script src="/assets/_components/pace/pace.js"></script>
     <!-- endbuild -->
 
-    {{ghost_head}}
+    <!-- Ideally this would be updating dynamically, but it was screwing up rss -->
+    <meta name="generator" content="Ghost 0.4" />
+    <link rel="canonical" href="http://benmccormick.org/" />
+    <link rel="alternate" type="application/rss+xml" title="benmccormick.org" href="http://feedpress.me/benmccormick">
   </head>
   <body class="{{body_class}}">
 

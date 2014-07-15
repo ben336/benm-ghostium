@@ -33,6 +33,8 @@
 
     <link rel="stylesheet" href="{{asset 'css/main.min.css'}}"/>
 
+    <script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">
       {{> custom/config}}
 
@@ -56,7 +58,10 @@
 
     <script src="{{asset 'js/head-scripts.min.js'}}"></script>
 
-    {{ghost_head}}
+    <!-- Ideally this would be updating dynamically, but it was screwing up rss -->
+    <meta name="generator" content="Ghost 0.4" />
+    <link rel="canonical" href="http://benmccormick.org/" />
+    <link rel="alternate" type="application/rss+xml" title="benmccormick.org" href="http://feedpress.me/benmccormick">
   </head>
   <body class="{{body_class}}">
 

@@ -76,6 +76,7 @@
 }
 
 .post-author-info {
+    padding-left:10px;
   .post-side & {
     clear: right;
   }
@@ -142,6 +143,12 @@
 
     & ~ hr {
       margin-bottom: 0;
+    }
+  }
+  a {
+    color: #e2777a;
+    &:hover {
+      color: #B01010;
     }
   }
 }
