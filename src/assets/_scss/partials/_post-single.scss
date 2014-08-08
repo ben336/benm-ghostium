@@ -24,7 +24,6 @@
 
 .post-title {
   line-height: 1;
-  padding-bottom: 15px;
 
   a {
     text-decoration: none;
@@ -76,7 +75,7 @@
 }
 
 .post-author-info {
-    padding-left:10px;
+
   .post-side & {
     clear: right;
   }
@@ -90,6 +89,7 @@
     font-style: italic;
     color: $muted-text-color;
     margin-bottom: 0;
+    padding-left:10px;
 
     a {
       color: $muted-text-color;

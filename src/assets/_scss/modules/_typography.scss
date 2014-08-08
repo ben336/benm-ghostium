@@ -44,12 +44,16 @@ h2, .h2,
 h3, .h3,
 h4, .h4 {
   font-family: $title-font-family;
-  font-weight: 700;
+  font-weight: 500;
   word-wrap: break-word;
+  color: $headline-color;
+  a {
+    color: $headline-color; 
+  }
 }
 
 h1, .h1 {
-  font-size: 40.5px;
+  font-size: 38px;
   text-indent: -2px;
   letter-spacing: -1px;
   line-height: 1.2;

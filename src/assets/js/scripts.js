@@ -205,17 +205,18 @@
     // Smooth scrolling for same page anchors
     // =================
     $document.on('click', 'a[href^=#]:not([href=#])', function(e) {
-      e.preventDefault();
+      // This is nice but doesn't seem to work
+      // e.preventDefault();
 
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $surface.animate({
-          scrollTop: target.offset().top
-        }, 500);
-        location.hash = this.hash;
-        return false;
-      }
+      // var target = $(this.hash);
+      // target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      // if (target.length) {
+      //   $surface.animate({
+      //     scrollTop: target.offset().top
+      //   }, 500);
+      //   location.hash = this.hash;
+      //   return false;
+      // }
     });
 
     // Fix oveflow-scrolling on iOS7
@@ -235,5 +236,17 @@
     });
 
   });
+
+  /** Ben's Helper Scripts Here **/
+
+  //we want wrappers around subscribe and More Resources without writing ugly HTML
+  var $resources = $('#moreresources,#moreresources+ul'),
+      $subscribe = $('#subscribe,#subscribe+p');
+      $resources.wrapAll('<div class="resources"/>');      
+      $subscribe.wrapAll('<div class="subscribe"/>');
+
+
+
+
 
 })(jQuery, window, document);
