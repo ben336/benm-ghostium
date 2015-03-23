@@ -75,6 +75,7 @@ h2, .h2 {
 h3, .h3 {
   font-size: 26.5px;
   line-height: 1.2;
+  color:#579;
 
   @include breakpoint(small) {
     font-size: 20px;
