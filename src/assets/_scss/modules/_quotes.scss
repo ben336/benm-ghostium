@@ -1,8 +1,10 @@
 blockquote {
-  font-style: italic;
   border-left: 5px solid $primary-color;
-  padding-left: 20px;
-  padding-bottom: 3px;
+  font-style: italic;
+  background: #EEE;
+  font-weight: 400;
+  font-size: 0.9em;
+  padding: 10px 20px;
   margin: 0 0 30px -25px;
 
   p {

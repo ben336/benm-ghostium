@@ -78,6 +78,11 @@ body {
   padding: 40px 10% 40px 185px;
   max-width: 910px;
 
+  &.index {
+    max-width:100%;
+    padding-left: 10%;
+  }
+
   @include breakpoint(medium) {
     padding: 40px 10%;
     max-width: 100%;

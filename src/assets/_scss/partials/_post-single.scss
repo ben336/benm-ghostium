@@ -158,12 +158,8 @@
   overflow: hidden;
   border-top: 2px solid $line-breaks-color;
   padding: 40px 0;
+  text-align:center;
 
-  & > .post-social,
-  & > .post-author {
-    width: 50%;
-    float: left;
-  }
 }
 
 .post-footer-heading {
@@ -186,4 +182,9 @@
 .post-comments {
   border-top: 2px solid $line-breaks-color;
   padding: 40px 0;
+
+  &.hidden {
+    display:none;
+  }
 }
+

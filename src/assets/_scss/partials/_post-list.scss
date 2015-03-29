@@ -8,7 +8,7 @@
 
 .post-item {
   position: relative;
-  padding: 35px 0;
+  padding: 10px 0;
   border-bottom: 1px solid $line-breaks-color;
   word-wrap: break-word;
 
@@ -57,9 +57,46 @@
   display: inline-block;
   font-size: 16px;
   color: $muted-text-color;
+  float:right;
+  @include breakpoint(small) {
+    display: none;
+  }
+
+  .tag {
+    background: #DDD;
+    padding: 5px;
+    border-radius: 5px;
+    color: $text-color;
+    opacity:0.8;
+    transition: background 1s;
+
+    &:hover {
+      opacity:1;
+    }
+
+    &.code {
+      background: $primary-color;
+      color: white;
+    }
+    &.javascript {
+      background: $primary-color;
+      color: white;
+    }
+    &.marionette-explained {
+      background: $secondary-color;
+      color: white;
+    }
+    &.meta {
+      background: $dark-accent;
+      color:white;
+    }
+    &.learning-vim-in-2014 {
+      background: $light-accent;
+    }
+  }
 
   &:before {
-    content: ' · ';
+    content: ' ';
   }
 
   &:first-child:before {

@@ -1,53 +1,28 @@
 {{!< default}}
 
-<section class="wrapper wrapper-post">
+{{> cover this}}
+
+<section class="wrapper">
   <div class="wrapper-container">
     <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post {{post_class}}">
       {{#post}}
         <section class="post-container">
           <header class="post-header">
-            <ul class="post-meta-list">
-              <li class="post-meta-item">
-                <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
-                  {{date published_at timeago="true"}}
-                </time>
-              </li>
-              {{#if tags}}
-                <li class="post-meta-item">
-                  {{#foreach tags}}
-                    <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
-                    {{~#if @last}} {{else}}, {{/if}}
-                  {{/foreach}}
-                </li>
-              {{/if}}
-              <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
-              </li>
-            </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
             {{! A subtitle not available in Ghosts yet }}
             <!--h2 itemprop="about" class="post-subtitle"></h2-->
           </header>
-          <aside class="post-side">
-            <div class="post-author">
-              {{#if author.image}}
-                <a href="{{author.website}}" class="post-author-avatar">
-                  <img src="{{author.image}}" alt="{{author.name}}">
-                </a>
-              {{/if}}
-              <div class="post-author-info">
-                <a href="{{author.website}}" class="post-author-name">
-                  {{author.name}}
-                </a>
-                <p class="post-author-bio">{{author.bio}}</p>
-              </div>
-            </div>
-          </aside>
           <div itemprop="articleBody" class="post-body">
-            {{content}}
+          {{content}}
           </div>
           <footer class="post-footer">
-            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+          <div class="buttons">
+            <a class="subscribe-button" href="/subscribe">Subscribe</a>
+            <a class="subscribe-button follow-button" href="http://twitter.com/ben336">Follow</a>
+            <a class="subscribe-button comment-button" href="#disqus_thread">Comment</a>
+            <a class="subscribe-button email-button" href="mailto:ben@benmccormick.org">Email</a>
+          </div>
+{{!--             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
               {{#if author.image}}
                 <a href="{{author.website}}" class="post-author-avatar">
                   <img itemprop="image" src="{{author.image}}" alt="{{author.name}}">
@@ -79,11 +54,11 @@
               <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
               <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
             </div>
-          </footer>
+ --}}          </footer>
         </section>
       {{/post}}
-      <section itemprop="comment" class="post-comments">
-        <div id="disqus_thread"></div>
+      <section itemprop="comment" class="post-comments hidden">
+        <div id="disqus_thread" name="disqus_thread"></div>
       </section>
     </article>
 

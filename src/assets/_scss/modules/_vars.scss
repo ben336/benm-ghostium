@@ -17,12 +17,15 @@ $breakpoint-xx-large: 1444px - 1px;
 //----------------------------------*/
 
 $background-color: #FFF;
-$text-color: #444;
-$headline-color: #222;
+$light-accent: #C8F2C6;
+$dark-accent: #1D413E;
+$text-color: #2c3233;
+$headline-color: #2c3233;
 $muted-text-color: #B3B3B3;
 $line-breaks-color: #F2F2F2;
 
 $primary-color: #57A3E8;
+$secondary-color:#E2777A;
 
 //----------------------------------*\
 // TYPO
@@ -35,7 +38,7 @@ $text-font-family: "brandon-grotesque", "Brandon Grotesque", "Helvetica Neue", "
 // DRAWER
 //----------------------------------*/
 
-$drawer-background-color: #232323;
+$drawer-background-color: $dark-accent;
 $drawer-text-color: #909090;
 $drawer-hover-color: #DDD;
 

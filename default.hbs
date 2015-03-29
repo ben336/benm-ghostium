@@ -61,10 +61,8 @@
     <link rel="alternate" type="application/rss+xml" title="benmccormick.org" href="http://feedpress.me/benmccormick">
   </head>
   <body class="{{body_class}}">
-{{!--
-    {{> drawer this}}
 
-    <div class="drawer-overlay"></div>
+
     <main id="container" role="main" class="container">
       <div class="surface">
         <div class="surface-container">
@@ -73,14 +71,13 @@
           </div>
         </div>
       </div>
-    </main> --}}
+    </main>
 
     {{ghost_foot}}
 
     <script src="{{asset 'js/foot-scripts.min.js'}}"></script>
 
     <script type="text/javascript">
-    //$.bigfoot();
       if(GHOSTIUM.haveGA) {
         (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
         function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;

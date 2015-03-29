@@ -1,12 +1,16 @@
 <aside role="banner" class="cover">
-  <div {{#if @blog.cover}}data-load-image="{{@blog.cover}}"{{/if}} class="cover-image"></div>
+  <div {{!-- {{#if @blog.cover}}data-load-image="{{@blog.cover}}"{{/if}} --}} class="cover-image"></div>
   <div class="cover-container">
-    {{#if @blog.logo}}
-      <a href="{{@blog.url}}" class="cover-logo" data-pjax>
-        <img src="{{@blog.logo}}" alt="Blog Logo">
-      </a>
-    {{/if}}
-    <h1 class="cover-title">{{@blog.title}}</h1>
+    <div class="blog-info">
+    <h1 class="cover-title"><a href="/" data-pjax>{{@blog.title}}</a></h1>
     <p class="cover-description">{{@blog.description}}</p>
+    </div>
+    <div class="buttons">
+      <a class="subscribe-button" href="/subscribe">Subscribe</a>
+      <a class="subscribe-button follow-button" href="http://twitter.com/ben336">Follow</a>
+    </div>
+    <ul role="navigation" class="cover-nav">
+      {{> custom/navigation this}}
+    </ul>
   </div>
 </aside>

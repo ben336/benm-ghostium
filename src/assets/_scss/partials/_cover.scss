@@ -7,10 +7,16 @@
   z-index: 100;
 
   @include breakpoint(medium) {
-    width: 100%;
-    height: 30%;
-    min-height: 300px;
+    height: 150px;
+    width:100%;
   }
+  .buttons {
+    @include breakpoint(medium) {
+      float:right;
+      width:40%;
+    }
+  }
+
 }
 
 .cover-image {
@@ -25,7 +31,7 @@
 
 .cover-container {
   position: absolute;
-  bottom: 0;
+  top: 0;
   padding: 50px 10% 10%;
   width: 100%;
   color: #fff;
@@ -34,6 +40,8 @@
   @include breakpoint(medium) {
     text-align: center;
     padding: 0 15px;
+    bottom:0;
+    top: initial;
   }
 }
 
@@ -58,14 +66,100 @@
   }
 }
 
-.cover-title {
+.cover-title a{
   font-size: 28px;
   line-height: 1;
   margin-bottom: 12px;
   color:#fff;
+  text-decoration:none;
+  &:hover {
+    color:$primary-color;
+  }
 }
 
 .cover-description {
   font-size: 16px;
   line-height: 1.2;
 }
+
+.cover-nav {
+  list-style-type: none;
+  margin: 0px;
+  color: #fff;
+
+  @include breakpoint(medium) {
+    display:none;
+  }
+}
+
+.buttons a {
+  display: inline-block;
+  text-align: center;
+  margin: 20px 20px 30px 0px;
+  clear: both;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $light-accent;
+  color: $text-color;
+  min-width: 100px;
+  text-decoration:none;
+  text-shadow:none;
+  transition: background-color .2s ease,box-shadow .28s cubic-bezier(.4,0,.2,1);
+
+  &:hover {
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    background-color: lighten($light-accent,4%);
+  }
+
+  &:active{
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+    background-color: lighten($light-accent,8%);
+  }
+
+  &.follow-button {
+    background: $primary-color;
+    color: #fff;
+    &:hover {
+      background-color: lighten($primary-color,4%);
+    }
+
+    &:active{
+      background-color: lighten($primary-color,8%);
+    }
+  }
+
+  &.comment-button {
+    background: $secondary-color;
+    color: #fff;
+    &:hover {
+      background-color: lighten($secondary-color,4%);
+    }
+
+    &:active{
+      background-color: lighten($secondary-color,8%);
+    }
+  }
+
+  &.email-button {
+    background: $dark-accent;
+    color: #fff;
+    &:hover {
+      background-color: lighten($dark-accent,4%);
+    }
+
+    &:active{
+      background-color: lighten($dark-accent,8%);
+    }
+  }
+  @include breakpoint(medium) {
+    margin: 10px;
+  }
+}
+
+.blog-info {
+  @include breakpoint(medium) {
+    float:left;
+    width:60%;
+  }
+}
+

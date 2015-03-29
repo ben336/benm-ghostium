@@ -20,10 +20,6 @@
     // =================
     FastClick.attach(document.body);
 
-    // Drawer bindings
-    // =================
-    Drawer.init();
-
     // PrismJS handler
     // =================
     Prism.languages.html = Prism.languages.markup;
@@ -76,7 +72,7 @@
 
         $script.remove();
 
-        if(posts.length) {
+        if(posts.length && $script.length) {
           $head.append($('<script/>', {
             async: true,
             src: $script.attr('src').split('?')[0] + '?' + posts.join('&')
@@ -112,7 +108,7 @@
         _gaHandler();
         _disqusCounterHandler();
         _prismHandler();
-
+        _bigfootHandler();
         $('[data-load-image]', $content).each(function() {
           ImageLoader.load($(this));
         });
@@ -242,11 +238,28 @@
   //we want wrappers around subscribe and More Resources without writing ugly HTML
   var $resources = $('#moreresources,#moreresources+ul'),
       $subscribe = $('#subscribe,#subscribe+p');
-      $resources.wrapAll('<div class="resources"/>');      
+      $resources.wrapAll('<div class="resources"/>');
       $subscribe.wrapAll('<div class="subscribe"/>');
 
+  //Tags should be subclassed by title
+  // var tags = $('.tags .tag');
+
+  // tags.each(function() {
+  //   var $tag = $(this),
+  //     text = $tag.text().trim(),
+  //     className = text.replace(/\W/g,'-').toLowerCase();
+  //   $tag.addClass(className);
+  // });
+
+  $('body').on('click', '.comment-button', function() {
+    $('.post-comments').removeClass('hidden');
+  });
 
 
+  function _bigfootHandler() {
+    $.bigfoot();
+  }
+  _bigfootHandler();
 
 
 })(jQuery, window, document);
